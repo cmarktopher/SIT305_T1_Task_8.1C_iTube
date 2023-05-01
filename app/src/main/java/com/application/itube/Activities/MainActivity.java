@@ -1,8 +1,10 @@
-package com.application.itube;
+package com.application.itube.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.application.itube.R;
 
 public class MainActivity extends AppCompatActivity {
 
