@@ -50,6 +50,7 @@
                     android:gravity="center_horizontal">
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/logInButton"
                         style="@style/Widget.Material3.Button"
                         android:layout_width="180dp"
                         android:layout_height="80dp"
@@ -58,6 +59,7 @@
                         tools:ignore="HardcodedText,SpeakableTextPresentCheck" />
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/signUpButton"
                         style="@style/Widget.Material3.Button"
                         android:layout_width="180dp"
                         android:layout_height="80dp"

@@ -6,6 +6,9 @@ import android.os.Bundle;
 
 import com.application.itube.R;
 
+/**
+ * https://developer.android.com/guide/navigation/navigation-getting-started
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
