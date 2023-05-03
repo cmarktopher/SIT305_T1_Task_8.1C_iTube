@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.application.itube.R;
 import com.application.itube.databinding.FragmentLogInBinding;
+import com.google.android.material.transition.MaterialFadeThrough;
 
 public class LogInFragment extends Fragment {
 
@@ -31,6 +32,10 @@ public class LogInFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+        MaterialFadeThrough exitFadeThrough = new MaterialFadeThrough();
+        exitFadeThrough.setDuration(2000);
+        setExitTransition(exitFadeThrough);
     }
 
     @Override
@@ -43,12 +48,21 @@ public class LogInFragment extends Fragment {
         // Bind to log in button
         binding.logInButton.setOnClickListener(this::onLogInPressed);
 
+        // Bind to sign up button
+        binding.signUpButton.setOnClickListener(this::onSignUpPressed);
+
         return view;
     }
 
     private void onLogInPressed(View view){
 
         NavDirections action = LogInFragmentDirections.actionLogInFragmentToHomeFragment();
+        Navigation.findNavController(getView()).navigate(action);
+    }
+
+    private void onSignUpPressed(View view){
+
+        NavDirections action = LogInFragmentDirections.actionLogInFragmentToSignUpFragment();
         Navigation.findNavController(getView()).navigate(action);
     }
 }

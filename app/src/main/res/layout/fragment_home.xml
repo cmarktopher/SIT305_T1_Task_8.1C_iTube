@@ -3,12 +3,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/homeYouTubeInputLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginEnd="10dp"
+                        android:hint="YouTube URL"
+                        app:errorEnabled="true"
+                        tools:ignore="HardcodedText">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/homeYouTubeInputText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/homeYouTubePlayButton"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="280dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="80dp"
+                        android:text="Play"
+                        android:textSize="30sp"
+                        tools:ignore="HardcodedText,SpeakableTextPresentCheck,TextSizeCheck" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/homeAddToPlaylistButton"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="280dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Add To Playlist"
+                        android:textSize="30sp"
+                        tools:ignore="HardcodedText,SpeakableTextPresentCheck,TextSizeCheck" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/homeMyPlaylistButton"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="280dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="20dp"
+                        android:text="My playlist"
+                        android:textSize="30sp"
+                        tools:ignore="HardcodedText,SpeakableTextPresentCheck,TextSizeCheck" />
+
+                </LinearLayout>
+            </ScrollView>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

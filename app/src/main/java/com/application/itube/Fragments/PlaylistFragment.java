@@ -10,15 +10,17 @@ import android.view.ViewGroup;
 
 import com.application.itube.R;
 
-public class SignUpFragment extends Fragment {
+public class PlaylistFragment extends Fragment {
 
-    public SignUpFragment() {
+    public PlaylistFragment() {
+
 
     }
 
-    public static SignUpFragment newInstance() {
 
-        SignUpFragment fragment = new SignUpFragment();
+    public static PlaylistFragment newInstance() {
+
+        PlaylistFragment fragment = new PlaylistFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -35,6 +37,6 @@ public class SignUpFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_sign_up, container, false);
+        return inflater.inflate(R.layout.fragment_playlist, container, false);
     }
 }
