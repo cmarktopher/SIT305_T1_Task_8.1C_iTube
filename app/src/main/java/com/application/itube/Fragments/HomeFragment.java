@@ -6,10 +6,13 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
+import com.application.itube.Fragments.LogInFragmentDirections;
 import com.application.itube.R;
 import com.application.itube.databinding.FragmentHomeBinding;
 import com.application.itube.databinding.FragmentLogInBinding;
@@ -19,6 +22,10 @@ import com.google.android.material.transition.MaterialSharedAxis;
 
 public class HomeFragment extends Fragment {
 
+    // Binding
+    private FragmentHomeBinding binding;
+
+    // Animations
     private MaterialFadeThrough enterFadeThrough;
     private MaterialFadeThrough exitFadeThrough;
     private MaterialSharedAxis exitSharedAxis;
@@ -60,7 +67,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Create our binding and view
-        FragmentHomeBinding binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
         // Bind buttons
@@ -77,8 +84,11 @@ public class HomeFragment extends Fragment {
         setExitTransition(exitSharedAxis);
         setReenterTransition(reEnterSharedAxis);
 
-        // Perform the transition
-        NavDirections action = HomeFragmentDirections.actionHomeFragmentToYouTubeFragment();
+        // Grab the url from the input box
+        String url = binding.homeYouTubeInputText.getText().toString();
+
+        // Perform the transition and pass in the url
+        com.application.itube.Fragments.HomeFragmentDirections.ActionHomeFragmentToYouTubeFragment action = HomeFragmentDirections.actionHomeFragmentToYouTubeFragment(url);
         Navigation.findNavController(getView()).navigate(action);
     }
 
