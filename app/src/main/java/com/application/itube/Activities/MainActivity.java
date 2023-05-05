@@ -10,6 +10,7 @@ import com.application.itube.R;
  * For this task, I took the opportunity to learn how to use the navigation graph,
  * as it looked really useful for handling transitions.
  * https://developer.android.com/guide/navigation/navigation-getting-started
+ * Also, I've taken parts of the truck sharing app and re-used it here.
  */
 public class MainActivity extends AppCompatActivity {
 

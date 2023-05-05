@@ -23,4 +23,10 @@ public class User {
 
     @ColumnInfo(name = "password")
     public String passWord;
+
+    public User(String fullName, String userName, String passWord) {
+        this.fullName = fullName;
+        this.userName = userName;
+        this.passWord = passWord;
+    }
 }

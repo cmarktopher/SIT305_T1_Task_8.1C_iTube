@@ -25,7 +25,6 @@ public class YouTubeFragment extends Fragment {
 
     }
 
-
     public static YouTubeFragment newInstance() {
 
         YouTubeFragment fragment = new YouTubeFragment();
@@ -65,6 +64,7 @@ public class YouTubeFragment extends Fragment {
      * So, since the official YouTube Android Player API is no longer supported,
      * I'll use this source to show me how to use web view and embed a youtube link.
      * https://androidchunk.com/how-to-embed-youtube-video-in-android-webview/
+     * I assume it is not good to use deprecated or no longer supported APIs, especially if there is security issues.
      * @param binding
      */
     private void handleWebViewYouTubeEmbed(FragmentYouTubeBinding binding){

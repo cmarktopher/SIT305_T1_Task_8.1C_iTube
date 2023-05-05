@@ -3,6 +3,7 @@ package com.application.itube.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
@@ -11,9 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.application.itube.DataModels.Playlist;
 import com.application.itube.Fragments.LogInFragmentDirections;
 import com.application.itube.R;
+import com.application.itube.ViewModels.PlaylistViewModel;
+import com.application.itube.ViewModels.UserViewModel;
 import com.application.itube.databinding.FragmentHomeBinding;
 import com.application.itube.databinding.FragmentLogInBinding;
 import com.google.android.material.transition.MaterialFadeThrough;
@@ -80,12 +85,19 @@ public class HomeFragment extends Fragment {
 
     private void onPlayPressed(View view){
 
+        binding.homeYouTubeInputLayout.setError(null);
+
         // Set our transition animations
         setExitTransition(exitSharedAxis);
         setReenterTransition(reEnterSharedAxis);
 
         // Grab the url from the input box
         String url = binding.homeYouTubeInputText.getText().toString();
+
+        if (url.isEmpty()){
+            binding.homeYouTubeInputLayout.setError("Please enter a URL");
+            return;
+        }
 
         // Perform the transition and pass in the url
         com.application.itube.Fragments.HomeFragmentDirections.ActionHomeFragmentToYouTubeFragment action = HomeFragmentDirections.actionHomeFragmentToYouTubeFragment(url);
@@ -94,6 +106,22 @@ public class HomeFragment extends Fragment {
 
     private void addToPlaylistPressed(View view){
 
+        String url = binding.homeYouTubeInputText.getText().toString();
+
+        if (url.isEmpty()){
+
+            binding.homeYouTubeInputLayout.setError("Please enter a URL");
+            return;
+        }
+
+        PlaylistViewModel playlistViewModel = new ViewModelProvider(requireActivity()).get(PlaylistViewModel.class);
+        playlistViewModel.insertNewPlaylistUrl(new Playlist(url));
+
+        // Lets also inform the user that the playlist was added
+        // Might as well use a toast for this
+        Toast toast = new Toast(getContext());
+        toast.setText("Youtube URL link added to playlists");
+        toast.show();
     }
 
     private void myPlaylistPressed(View view){
@@ -105,6 +133,5 @@ public class HomeFragment extends Fragment {
         // Perform the transition
         NavDirections action = HomeFragmentDirections.actionHomeFragmentToPlaylistFragment();
         Navigation.findNavController(getView()).navigate(action);
-
     }
 }

@@ -96,13 +96,34 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/signUpPasswordInputLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:hint="Password"
+                        app:endIconMode="password_toggle"
+                        app:errorEnabled="true"
+                        tools:ignore="HardcodedText">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/signUpPasswordInputText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="textPassword"
+                            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/signUpConfirmPasswordInputLayout"
                         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                         android:layout_width="320dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:hint="Password"
+                        android:hint="Confirm Password"
                         app:endIconMode="password_toggle"
                         app:errorEnabled="true"
                         tools:ignore="HardcodedText">
@@ -115,26 +136,6 @@
                             tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/signUpPasswordInputLayout"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-                        android:layout_width="320dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="20dp"
-                        android:hint="Confirm Password"
-                        app:endIconMode="password_toggle"
-                        app:errorEnabled="true"
-                        tools:ignore="HardcodedText">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/signUpPasswordInputText"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:inputType="textPassword"
-                            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
-                    </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/signUpCreateAccountButton"

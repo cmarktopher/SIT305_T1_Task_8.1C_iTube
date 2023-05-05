@@ -10,7 +10,7 @@ import com.application.itube.DataModels.User;
 public interface UsersDAO {
 
     @Query("SELECT * FROM users WHERE user_name = :userName")
-    void getUserByUserName(String userName);
+    User getUserByUserName(String userName);
 
     @Insert
     void insertNewUser(User newUser);
